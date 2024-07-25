@@ -1,24 +1,5 @@
 const prompt = require('prompt-sync')();
-const alunos = [
-    {
-        nomeAluno: 'Edson',
-        dataNascimento: 1988,
-        curso: 'dev',
-        periodo: 'noite',
-    },
-    {
-        nomeAluno: 'Aluno 1',
-        dataNascimento: 2010,
-        curso: 'dev',
-        periodo: 'noite',
-    },
-    {
-        nomeAluno: 'Aluno 2',
-        dataNascimento: 1999,
-        curso: 'dev',
-        periodo: 'tarde',
-    },
-];
+const alunos = [];
 const validarIndice = (indice) => indice >= 0 && indice < alunos.length;
 
 const modelo = (indice = -1) => {
@@ -115,5 +96,5 @@ module.exports = {
     criar,
     listar,
     remover,
-    atualizar
-}
+    atualizar,
+};

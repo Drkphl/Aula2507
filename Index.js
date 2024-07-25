@@ -1,0 +1,36 @@
+const prompt = require('prompt-sync')();
+const { criar, atualizar, listar, remover } = require('./funcoes');
+
+while (true) {
+    console.log(`
+1 - Adicionar Aluno
+2 - Listar Alunos
+3 - Remover Aluno
+4 - Atualizar Aluno
+5 - para sair
+\n
+`);
+
+    const opcao = Number(prompt(`Escolha uma opção acima: `));
+    switch (opcao) {
+        case 1:
+            criar();
+            break;
+        case 2:
+            listar();
+            break;
+        case 3:
+            remover();
+            break;
+        case 4:
+            atualizar();
+            break;
+        case 5:
+            process.exit();
+            break;
+
+        default:
+            console.log(`Opção invalida`);
+            break;
+    }
+}
