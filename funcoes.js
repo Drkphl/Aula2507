@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')();
 const alunos = [];
+
 const validarIndice = (indice) => indice >= 0 && indice < alunos.length;
 
 const modelo = (indice = -1) => {
@@ -69,8 +70,6 @@ const remover = () => {
     } else {
         console.log('Falha na remoção');
     }
-
-    console.log(alunos);
 };
 
 //exercicio 04
@@ -92,9 +91,30 @@ const atualizar = () => {
     }
 };
 
+const calc = function (age) {
+    let now = new Date();
+    let year = now.getFullYear();
+
+    return year - age;
+};
+
+const Calcular = () => {
+    let maiores = 0;
+    let menores = 0;
+    alunos.forEach(function (alunos) {
+        if (calc(alunos.dataNascimento) >= 18) {
+            maiores++;
+        } else {
+            menores++;
+        }
+    });
+    console.log(`${maiores} Alunos são de maior, e ${menores} Alunos são menores de idade`);
+};
+
 module.exports = {
     criar,
     listar,
     remover,
     atualizar,
+    Calcular,
 };

@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-const { criar, atualizar, listar, remover } = require('./funcoes');
+const { criar, atualizar, listar, remover, Calcular } = require('./funcoes');
 
 while (true) {
     console.log(`
@@ -8,6 +8,7 @@ while (true) {
 3 - Remover Aluno
 4 - Atualizar Aluno
 5 - para sair
+6 - Listar alunos de maior
 \n
 `);
 
@@ -28,7 +29,11 @@ while (true) {
         case 5:
             process.exit();
             break;
-
+        case 6:
+            Calcular();
+            
+            break;
+            
         default:
             console.log(`Opção invalida`);
             break;
